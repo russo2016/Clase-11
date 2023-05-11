@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #282829;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a52121;
+    gap: 18px;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+    }   
+}
+
+img {
+    max-width: 100%;
+}
+
+.header__logo {
+    width: 80px;
+}
+
+.header__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (min-width: 500px) {
+    .header__menu {
+        flex-direction: row;
+    }
+}
+
+/*es una PSEUDOCLASE*/
+/*CAMBIAN LAS COSAS AL PASAR POR ENCIMA*/
+.header__menu  li a:hover{
+    color: yellow;
+    background-color: black;
+    padding: 8px 10px;
+}
+
+/*ACTIVE*/
+.header__menu  li a:active{
+    background-color: orange;
+    color: red;
+}
+
+/*CUANDO NO VISITAMOS EL ENLACE
+.header__menu  li a:link{
+    color: blue;
+}
+
+/*CUANDO UN LINK YA FUE VISITADO
+.header__menu  li a:visited{
+    color: green;
+}*/
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 30px 0;
+    color: #fff;
+}
+
+.header__menu li a {
+    color: white;
+    font-weight: 700;
+}
+
+/*BANNER*/
+.banner {
+    background-image: url('../img/codigo1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*EFECTO PARALLAX*/
+    background-attachment: fixed;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    background-color: rgba(234, 234, 234, .5);
+    color: black;
+}
+
+/*CARDS*/
+.padre-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .padre-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .padre-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.padre-cards__card {
+    width: 18rem;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    box-shadow: 0px 0px 17px 0px rgba(255,255,255,1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.padre-cards__card h4, .padre-cards__card p {
+    color: #fff;
+}
+
+.padre-cards__card button {
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.padre-cards__card--oferta{
+    background-color: #a52121;
+}
+
+/*NERDS Y FOOTER*/
+.nerds {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: rgb(234,234,234);
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+}
+
+.padre-redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .padre-redes {
+        flex-direction: column;
+        position: fixed;
+        top: 40%;
+        right: 2%;
+    }
+
+    .titulo-redes {
+        display: none;
+    }
+}
+
+.redes {
+    width: 35px;
+}
+
+/*PSEUDOCLASES not*/
+/*Last of type | first of type | nth*/
+.pseudolista li:not(:last-of-type){
+    background-color: #a52121;
+    margin-bottom: 15px;
+}
+
+/*PARA ELEGIR UNO EN ESPECIFICO O PARES(EVEN) E IMPARES(ODD)*/
+.otralista li:nth-child(even){
+    background-color: orange;
+}
+
+/*CARRITO*/
+.item-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 100%;
+}
+
+.item-carrito img{
+    width: 150px;
+}
+
+#carrito-completo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.item-carrito:nth-child(even){
+    background-color: red;
+}
+
+/*FILTRO DE PRODUCTOS*/
+.container-labels{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.container-labels label{
+    /*para que se note que se puede hacer click*/
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
+/*DAR USANDO PSEUDOCLASES*/
+.container-labels label:nth-child(odd){
+    background-color: #a52121;
+}
+
+.container-labels label:nth-child(even){
+    background-color: white;
+}
+
+/*ocultar los radios*/
+#remeras, #pcs, #todos{
+    display: none;
+}
+
+.remeras, .pcs{
+    display: none;
+}
+
+#remeras:checked ~ .padre-cards .remeras{
+    display: flex;
+}
+
+#pcs:checked ~ .padre-cards .pcs{
+    display: flex;
+}
+
+#todos:checked ~ .padre-cards .remeras,
+#todos:checked ~ .padre-cards .pcs{
+    display: flex;
+}
+
+.padre-banners{
+    margin: 0 auto;
+}
+
+header nav{
+    width: 100%;
+}
+
+/*CARROUSEL*/
+.carousel-item img{
+    height: 300px;
+}
+@media(min-width: 768px){
+    #carouselExample{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .carousel-item{
+        height: 350px;
+    }
+}
