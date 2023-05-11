@@ -1,6 +1,7 @@
 Trabajar con git:
 
 1. git init
+Para inicializar, solo se hace la primera vez
 
 2. git status
 
@@ -9,4 +10,6 @@ Es para chequear que todo este bien o este todo mal
 3. git add .
 
 Esto permite agregar las modificaciones que hayamos hecho
+
+4. git commit -m "Un mensaje cualquiera"
 
